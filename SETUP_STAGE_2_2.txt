@@ -1,0 +1,77 @@
+ATROPOLIES — STAGE 2.2: CUSTOMER AUTHENTICATION
+================================================
+
+WHAT IS INCLUDED
+- Existing Stage 1 homepage and design preserved.
+- Register, login, password recovery and password reset pages.
+- Private dashboard with sign-out.
+- Supabase Auth integration using the browser publishable key.
+- Customer profile table protected by PostgreSQL Row Level Security.
+- Netlify response security headers.
+
+IMPORTANT: These files are a starter integration. Authentication will NOT work until you create and configure your own Supabase project. Do not enter real customer data until setup and testing are complete.
+
+STEP 1 — CREATE SUPABASE PROJECT
+1. Visit https://supabase.com/ and create a project.
+2. Save the database password privately; never place it in website files.
+3. Open Project Settings → API (or API Keys).
+4. Copy the Project URL and the publishable key (or legacy anon public key).
+5. Do NOT copy a secret key or service_role key into the website.
+
+STEP 2 — CREATE THE PROFILE TABLE
+1. In Supabase, open SQL Editor → New query.
+2. Open supabase/01_profiles.sql from this package.
+3. Paste and run the complete SQL.
+4. Confirm the profiles table exists and RLS is enabled.
+
+STEP 3 — CONNECT THE WEBSITE
+1. Open js/config.js.
+2. Replace PASTE_YOUR_SUPABASE_PROJECT_URL_HERE with your Project URL.
+3. Replace PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE with the publishable/anon public key.
+4. Never add database passwords, service_role keys, payment secrets or other private credentials to browser files.
+
+STEP 4 — CONFIGURE AUTH URLS
+In Supabase → Authentication → URL Configuration:
+- Set Site URL to your deployed Netlify URL during testing.
+- Add these Redirect URLs:
+  https://YOUR-NETLIFY-SITE.netlify.app/login.html
+  https://YOUR-NETLIFY-SITE.netlify.app/reset-password.html
+- Later add the exact production domain URLs after ATROPOLIES.COM is connected.
+- Do not use a broad wildcard redirect in production.
+
+STEP 5 — EMAIL AUTHENTICATION
+- Enable email confirmations.
+- Configure the confirmation email template to use the Supabase confirmation URL.
+- Configure password recovery email template.
+- For production, configure a trusted transactional SMTP provider and test delivery.
+- Keep auth rate limits enabled; tune them carefully for real traffic.
+
+STEP 6 — DEPLOY TO NETLIFY
+1. Upload the contents of this package to the existing Netlify site (not the ZIP file itself).
+2. Keep index.html, style.css, script.js, auth.css, _headers and the other files in the published root as shown.
+3. Deploy a preview first.
+4. Check browser developer console for CSP errors. If adding third-party services, allow only the exact origins needed.
+
+STEP 7 — TEST BEFORE REAL USERS
+- Register using a test email address.
+- Confirm the email and follow the link back to the site.
+- Sign in and verify the dashboard loads.
+- Open the dashboard in a private/incognito browser without signing in; it should redirect to login.
+- Request a password reset and complete it.
+- Sign out and confirm the dashboard redirects to login.
+- Create two test accounts. Verify each account can only read its own profile. Test database access with the Supabase client/API, not merely by changing the visible page.
+
+SECURITY NOTES
+- The dashboard redirect is a user-interface convenience, not the security boundary. PostgreSQL RLS is the actual data boundary.
+- This starter has no administrator roles. Never let a user grant themselves admin privileges.
+- This starter has no payment processing, course entitlement logic, gaming score writes, or business-owner permissions yet.
+- Never trust browser-side validation for sensitive actions. Validate and authorize on the server/database.
+- Use MFA for administrator accounts before launch.
+- Pin and review third-party JavaScript dependencies before production; the CDN script currently uses the Supabase JS v2 major-version URL for ease of setup.
+- Review the CSP when you add external assets or payment integrations.
+- Back up the database and test restoration before storing important customer data.
+- Complete a privacy notice and Kenyan Data Protection Act / ODPC compliance assessment before collecting real customer data.
+
+NEXT STAGE
+Stage 2.3: advanced account security (TOTP MFA and session-wide sign-out). See SETUP_STAGE_2_3.txt.
+Stage 3: payment provider integration with server-verified callbacks.

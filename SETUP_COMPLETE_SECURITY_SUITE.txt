@@ -1,0 +1,28 @@
+ATROPOLIES — COMPLETE SECURITY SUITE SETUP ORDER
+
+1. BACK UP THE CURRENT REPOSITORY AND LIVE DEPLOY BEFORE REPLACING FILES.
+2. Upload this package's contents to the GitHub repository root.
+3. Deploy first to a staging/test Netlify site or branch.
+4. Configure Supabase project URL and publishable key in js/config.js.
+   Never use service_role/secret keys in this file.
+5. Set Supabase Auth Site URL and exact redirect URLs to the staging domain.
+6. Apply SQL in this order:
+   a. supabase/01_profiles.sql
+   b. supabase/02_roles_access_control.sql
+   c. supabase/03_database_security.sql
+   d. supabase/07_security_monitoring.sql
+   e. supabase/09_payment_security.sql (schema only)
+   f. supabase/10_privacy_governance.sql
+   Do not run 08_backup_safety_checks.sql as a migration; it is diagnostic SQL.
+7. Test profile/business access with two customers and an administrator.
+8. Configure MFA, email delivery, provider-side rate limits, backups/PITR and logs
+   in the Supabase dashboard. Perform a restore test in a separate project.
+9. Configure Netlify HTTPS, headers, team access and environment secrets.
+10. If using Cloudflare, follow docs/NETWORK_SECURITY_DEPLOYMENT.txt carefully.
+11. Complete vendor register, privacy notice, retention schedule and legal review.
+12. Do not activate live payments: payment webhook is still a 503 placeholder
+    until a provider-specific integration has been built and tested.
+13. Complete docs/SECURITY_TEST_CHECKLIST.txt and obtain independent review.
+
+Do not apply SQL to a production database without backup and review. Do not
+enable WAF/DNS settings blindly; incorrect configuration can take the site down.

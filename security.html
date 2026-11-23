@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#101827">
+  <title>Account security | ATROPOLIES</title>
+  <link rel="stylesheet" href="assets/auth-base.css">
+  <link rel="stylesheet" href="auth.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/input-security.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/auth-common.js" defer></script>
+  <script src="js/security.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="site-header auth-header">
+    <a class="brand" href="index.html"><span class="brand-mark">A</span><span>ATROPOLIES</span></a>
+    <a class="nav-cta" href="dashboard.html">Dashboard</a>
+  </header>
+  <main class="auth-main">
+    <section class="auth-card" aria-labelledby="pageTitle">
+      <p class="eyebrow">ACCOUNT PROTECTION</p>
+      <h1 id="pageTitle">Security<br><span>settings.</span></h1>
+      <p class="auth-intro">Add an authenticator app as a second layer of protection for your account.</p>
+      <div class="account-panel">
+        <p class="field-help">TWO-FACTOR AUTHENTICATION</p>
+        <p id="mfaStatus" class="account-value">Checking your account…</p>
+        <div id="enrolPanel">
+          <button class="button button-primary auth-submit" id="startMfa" type="button">Set up authenticator</button>
+        </div>
+        <div id="verifyPanel" hidden>
+          <p class="field-help">1. Scan this QR code with an authenticator app, or enter the setup key manually.</p>
+          <img id="mfaQr" class="mfa-qr" alt="Authenticator setup QR code">
+          <p class="field-help">MANUAL SETUP KEY — keep this private</p>
+          <p id="mfaSecret" class="account-value secret-value"></p>
+          <label for="enrolCode">2. Enter the six-digit code from your authenticator app</label>
+          <input id="enrolCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="123456">
+          <button class="button button-primary auth-submit" id="verifyMfa" type="button">Verify and enable MFA</button>
+          <button class="button button-quiet auth-submit" id="cancelMfa" type="button">Cancel setup</button>
+        </div>
+        <div id="disablePanel" hidden>
+          <p class="field-help">Your authenticator is active. Removing it will reduce account protection.</p>
+          <label for="disableCode">Enter a current authenticator code to remove this factor</label>
+          <input id="disableCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="123456">
+          <button class="button button-quiet auth-submit" id="disableMfa" type="button">Remove authenticator</button>
+        </div>
+      </div>
+      <div class="account-panel">
+        <p class="field-help">SESSION CONTROL</p>
+        <p class="auth-intro">If you think someone else has access to your account, sign out of every active session. You will need to sign in again on this device.</p>
+        <button class="button button-quiet auth-submit" id="signOutAll" type="button">Sign out everywhere</button>
+      </div>
+      <p id="authMessage" class="auth-message" role="status" aria-live="polite"></p>
+      <p class="auth-switch"><a href="dashboard.html">Back to dashboard</a></p>
+    </section>
+  </main>
+  <footer class="footer auth-footer"><p>One City, Every Dream.</p><span>Account security</span></footer>
+</body>
+</html>

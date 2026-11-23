@@ -1,0 +1,347 @@
+[
+  {
+    "path": "README_INTEGRATED_SETUP.txt",
+    "bytes": 5482,
+    "sha256": "9ade49c438b73557730ac2d3bc9a286645efb3f66389c99600d28f07231a6927"
+  },
+  {
+    "path": "README_STAGE_2_10.txt",
+    "bytes": 1674,
+    "sha256": "29d882252b57f58d71254b29e4d5f0a6a8bd730ee229029256bf1af5d2bc384d"
+  },
+  {
+    "path": "README_STAGE_2_3.txt",
+    "bytes": 253,
+    "sha256": "11d54c9070a0d92b794d68a3252d420e4f71ffad56cb83d3fe97fddcbff35f67"
+  },
+  {
+    "path": "README_STAGE_2_4.txt",
+    "bytes": 434,
+    "sha256": "e053c73fc6f72c6a56b4d5ea45badac6dfa112126e55f6efcf74b334006efefe"
+  },
+  {
+    "path": "README_STAGE_2_5.txt",
+    "bytes": 577,
+    "sha256": "a6e730eb4b0e67359f8ba03fd832cc6cc78766f9ecb1e38299da66b4c9565a32"
+  },
+  {
+    "path": "README_STAGE_2_6.txt",
+    "bytes": 571,
+    "sha256": "77de6a5ee2a49b9a981062544bc29e637aa71c74c8d4ca140ff892d3f6c0048a"
+  },
+  {
+    "path": "README_STAGE_2_7.txt",
+    "bytes": 1953,
+    "sha256": "c2e9ab13bed9094d233c7fe972b2be7a5d1520511ac1d0f742e4f0bbdc2f2d55"
+  },
+  {
+    "path": "README_STAGE_2_8.txt",
+    "bytes": 3002,
+    "sha256": "c8ac85c43f9c213a79bcf9db29e3e53383ae58f96be5ad7d536ed78fb55c3da5"
+  },
+  {
+    "path": "README_STAGE_2_9.txt",
+    "bytes": 2455,
+    "sha256": "6fae36e7b0a795a1eb69bfc755a91cfcc5c8fc86c6113375cf552029dee45507"
+  },
+  {
+    "path": "SECURITY_CHECKLIST_STAGE_2_6.md",
+    "bytes": 1903,
+    "sha256": "612d7a5705ac7203f5bfef839a35921d1f00f1f6460ca623d056de498f7e39de"
+  },
+  {
+    "path": "SETUP_COMPLETE_SECURITY_SUITE.txt",
+    "bytes": 1658,
+    "sha256": "e14553665da5722930156f7c62a644fbd1e1f268390d02ae8b119a3a7f08cf1f"
+  },
+  {
+    "path": "SETUP_STAGE_2_2.txt",
+    "bytes": 4396,
+    "sha256": "d0060d4ae03a02a3c00b1ae6518abdd2ee2bb7f8b5869c30ba8b8daf546493fe"
+  },
+  {
+    "path": "SETUP_STAGE_2_3.txt",
+    "bytes": 3684,
+    "sha256": "7027eced283529b60f2d1c6394d918a57d4eceb3c31521365f42afc514620936"
+  },
+  {
+    "path": "SETUP_STAGE_2_4.txt",
+    "bytes": 2718,
+    "sha256": "66369cbe6d6f75c57c44355768f20a978d15798d6261c4e130a4afd831e0d5d2"
+  },
+  {
+    "path": "SETUP_STAGE_2_5.txt",
+    "bytes": 2564,
+    "sha256": "a1bc6c671cc77cc045b1a6e5723b5e1583b02dfe3a9886c1d6538680d1745c7c"
+  },
+  {
+    "path": "SETUP_STAGE_2_6.txt",
+    "bytes": 4569,
+    "sha256": "1218309d0fb55dc17617cf89b6b436ca14dc512d4eb1240d2790abd0524a062e"
+  },
+  {
+    "path": "_headers",
+    "bytes": 716,
+    "sha256": "cc31107b1fbd814a13ddc70b004a0655076dcc77a952d7895da13745c69b94ef"
+  },
+  {
+    "path": "assets/auth-base.css",
+    "bytes": 7397,
+    "sha256": "1301c0d12156466dffee6ba3fdc029c8db496a41195c9c66bd51b3eb992a605e"
+  },
+  {
+    "path": "assets/site.css",
+    "bytes": 12886,
+    "sha256": "a3d3ca3b458a26b0bc2bcdd496203f0f805e4ea61549a376f69c2596e5415261"
+  },
+  {
+    "path": "auth.css",
+    "bytes": 1996,
+    "sha256": "ae65faa44f3e9499453d939e6ed7d26fbb592fe2ff463bdab4e963d74148450d"
+  },
+  {
+    "path": "dashboard.html",
+    "bytes": 1974,
+    "sha256": "b222ded7fa79c6d1bf0e42621274eb8621914b7579629f0ee04b03ad50d4d0a3"
+  },
+  {
+    "path": "docs/BACKUP_INVENTORY.txt",
+    "bytes": 1016,
+    "sha256": "9e50b0cba60700e648b4c17e329de915b25baa01dadb03123deb4c28c3648175"
+  },
+  {
+    "path": "docs/COOKIE_AND_TRACKING_NOTICE_DRAFT.md",
+    "bytes": 977,
+    "sha256": "3263a0e496306189ab9469642d534c78a31290605370585bfe24c5e213097aa2"
+  },
+  {
+    "path": "docs/DATA_RETENTION_AND_DELETION_POLICY.md",
+    "bytes": 1447,
+    "sha256": "ee27b4b5d0ac71a0455ece89123327ba3c9825c06e179137a7f7226ebdfc948f"
+  },
+  {
+    "path": "docs/DATA_SUBJECT_REQUEST_PROCESS.md",
+    "bytes": 977,
+    "sha256": "29050d14acbe25eb6f0e797a566ce256de09cf9b719ce22fddb2f37e30d3e23b"
+  },
+  {
+    "path": "docs/INCIDENT_RESPONSE_RUNBOOK.txt",
+    "bytes": 2304,
+    "sha256": "3b5c7fd1aabe6c1224742bf9ecabd1812e2c6b6172dc0295b2dceec90f0bd72f"
+  },
+  {
+    "path": "docs/INFORMATION_SECURITY_POLICY.md",
+    "bytes": 1879,
+    "sha256": "86c92d1bff5084418068c625261bcb0cd705748ae88f82a27156920899c4ee41"
+  },
+  {
+    "path": "docs/KENYA_PRIVACY_COMPLIANCE_CHECKLIST.txt",
+    "bytes": 1586,
+    "sha256": "79a235151a8dffa29b080613e4ca6b6c513d5b08dd73436b0ad80eb7754f3e5d"
+  },
+  {
+    "path": "docs/LAUNCH_GO_NO_GO.txt",
+    "bytes": 1180,
+    "sha256": "4eb0f50a7f971f4c5dce86e50d894cac0a8a54583fe56a6221e723486f151151"
+  },
+  {
+    "path": "docs/NETWORK_SECURITY_DEPLOYMENT.txt",
+    "bytes": 2627,
+    "sha256": "f9f2251ecf72eba9fbeea9726d468945936238389fcf9d09c483de0f16fe0dc3"
+  },
+  {
+    "path": "docs/PAYMENT_FLOW.txt",
+    "bytes": 1321,
+    "sha256": "acfffad6bc0936fbffa6d4974e9bda94404f1615ce59db8192bad3f82810b1d7"
+  },
+  {
+    "path": "docs/PRIVACY_NOTICE_DRAFT.md",
+    "bytes": 4941,
+    "sha256": "f5e5514d7980d0f4450cfe9bb245c884dd7506289b76bbe716a0acc82fc1d293"
+  },
+  {
+    "path": "docs/PROVIDER_SETUP_CHECKLIST.txt",
+    "bytes": 1451,
+    "sha256": "d29bb7713920fe8db6faf7185e399fc3d2697c27878e38bd63e7b70247fc1ac3"
+  },
+  {
+    "path": "docs/RECOVERY_TARGETS.txt",
+    "bytes": 786,
+    "sha256": "bf9e36630136a377555566dd3f80e38258cfe2c6791b1e556a2a634250a5a6be"
+  },
+  {
+    "path": "docs/RESTORE_TEST_RECORD.txt",
+    "bytes": 585,
+    "sha256": "0b6966026ff8eeb6f2a27506e9a95ba1f3fa6a184345116b8d275c0660444c17"
+  },
+  {
+    "path": "docs/SECURITY_ARCHITECTURE.md",
+    "bytes": 3234,
+    "sha256": "0dbcd5553902c640ea20d6a348577fd70be8e0384751c874f8b3b05455a27dfd"
+  },
+  {
+    "path": "docs/SECURITY_FEATURES_STATUS.txt",
+    "bytes": 1893,
+    "sha256": "9ce8d9623af1cf25d43a22bf860eae940532843cfc4a995567a9a55bdca3c8e2"
+  },
+  {
+    "path": "docs/SECURITY_IMPLEMENTATION_MAP.txt",
+    "bytes": 1993,
+    "sha256": "e267e91e69b7fe2850fd746d42593ed97d7ea8dfea44920671998e85c9873e23"
+  },
+  {
+    "path": "docs/SECURITY_MAINTENANCE_SCHEDULE.txt",
+    "bytes": 1078,
+    "sha256": "c431db6ee27e798d6a0a7fab7c82fe57d3b5fa9f9fa4fb0285999c10a0759a42"
+  },
+  {
+    "path": "docs/SECURITY_TEST_CHECKLIST.txt",
+    "bytes": 3538,
+    "sha256": "2a4e0900603d5614aa83a041f5074eb01ca12ce57a8cf829dbe8c545dd90cdce"
+  },
+  {
+    "path": "docs/TERMS_AND_CONDITIONS_DRAFT.md",
+    "bytes": 2438,
+    "sha256": "b8088503ea6735a7b1aaaf2c351cc6848d8444d3937f8129af2e43c75f09032c"
+  },
+  {
+    "path": "docs/TEST_CASES.txt",
+    "bytes": 1021,
+    "sha256": "b34f1e46a0bd309c57b1674c52f08e79b81fa482f8336d6a32050ce3ccf88614"
+  },
+  {
+    "path": "docs/TEST_RESULTS_RECORD.txt",
+    "bytes": 584,
+    "sha256": "6c5ad01bff86f0eec38ea8afbaba23f23bda0908fb11b1dc51523c803bbe7f83"
+  },
+  {
+    "path": "docs/VENDOR_AND_PROCESSOR_REVIEW.txt",
+    "bytes": 805,
+    "sha256": "f5a1c96976f236b550049058cb3f1611f767665cec51579959de3d4b1823cb08"
+  },
+  {
+    "path": "docs/WEEKLY_SECURITY_CHECKLIST.txt",
+    "bytes": 1398,
+    "sha256": "f0d5286cd72ac6240dfdfcd974e8346768f31d99ac8c3b4cc021b38b6fbd35e6"
+  },
+  {
+    "path": "forgot-password.html",
+    "bytes": 1747,
+    "sha256": "1d01a12ce5792cb047695df0b3febfac8c0f0f15f736f203b2521761cc041b1d"
+  },
+  {
+    "path": "index.html",
+    "bytes": 52763,
+    "sha256": "58d0d9bbc2ef29f48c9f510ee594b8313847cb2da8c555925a99c9d565a2a049"
+  },
+  {
+    "path": "js/auth-common.js",
+    "bytes": 622,
+    "sha256": "8b6960915a4b0019ebc8b34d9f2d59a59055e64a99681069d8a9f74f772fa68c"
+  },
+  {
+    "path": "js/config.js",
+    "bytes": 1014,
+    "sha256": "83c2ed79b71081ed6c938c089d4cf68ba34229e270dff321905b35c3cfe0a1aa"
+  },
+  {
+    "path": "js/dashboard.js",
+    "bytes": 2319,
+    "sha256": "839c7b0db273ed50e5d3176d120673f8e5c1e54d25b57e1debfcfc3d021fe8bf"
+  },
+  {
+    "path": "js/forgot-password.js",
+    "bytes": 1215,
+    "sha256": "479ce5dc956139f763b1e7044b7c1c724432416e045ed2a6667f4185557c95e0"
+  },
+  {
+    "path": "js/input-security.js",
+    "bytes": 1679,
+    "sha256": "8ae889f70621f34c090add9f454757d6769989b3dbb4a43eaea41d880811637f"
+  },
+  {
+    "path": "js/login.js",
+    "bytes": 3089,
+    "sha256": "36fe2602140c88bb77366b3ce99b0567eac3327d790e976afb248e96a5d21bce"
+  },
+  {
+    "path": "js/register.js",
+    "bytes": 1696,
+    "sha256": "c634b1b348bb69139ff8fd77b62d13ba20ef7b5eb183076b14875a24f7916862"
+  },
+  {
+    "path": "js/reset-password.js",
+    "bytes": 1215,
+    "sha256": "611ce23dac9c06b7185b671fb8b384a6357c1e89b565877b6278e39bf9aefd30"
+  },
+  {
+    "path": "js/security.js",
+    "bytes": 5630,
+    "sha256": "73a408ed9ba32868b97a2dbc94f4602ed160fb8471e6467e89dd94ed0f5913e8"
+  },
+  {
+    "path": "js/site.js",
+    "bytes": 8568,
+    "sha256": "c50d490280b38d6b04099a101ccac2e11b0497093f61991b583874ff0d21b36b"
+  },
+  {
+    "path": "login.html",
+    "bytes": 2495,
+    "sha256": "69da11d6ac8e05165963b2df6b1b2e5419d7b088be71e2d9be52b2d03f532833"
+  },
+  {
+    "path": "register.html",
+    "bytes": 2504,
+    "sha256": "671105980c1776cde47899a3ac942658ccd2f078600f9569d31809e66f4b573b"
+  },
+  {
+    "path": "reset-password.html",
+    "bytes": 1716,
+    "sha256": "d5d3db53b14e693b6aaba263bbfe1ef4ac5a988e38055b76d880b5a0747a3f81"
+  },
+  {
+    "path": "security.html",
+    "bytes": 3616,
+    "sha256": "da3698bed8250cc10ac512f06d0b2de478a335d29f6b1acad563433159442e1f"
+  },
+  {
+    "path": "supabase/01_profiles.sql",
+    "bytes": 1955,
+    "sha256": "e448a5c25437ed7aaeb2b93f6751fbd388b283d8199c41bb8395b8de1e354a12"
+  },
+  {
+    "path": "supabase/02_roles_access_control.sql",
+    "bytes": 5067,
+    "sha256": "be7b32be229b598bd8dbe3f1e253593b7e328fe8c6782ef52745d59cc195760a"
+  },
+  {
+    "path": "supabase/03_database_security.sql",
+    "bytes": 4946,
+    "sha256": "ed23846725feaa8b1634702f13f33a802cb66cefb26d403fc6311ea0bc9f5b70"
+  },
+  {
+    "path": "supabase/07_security_monitoring.sql",
+    "bytes": 2175,
+    "sha256": "e9209e81ee7246cb91c616244908967c9bdd71d7ffd6047b614b448fa2745737"
+  },
+  {
+    "path": "supabase/08_backup_safety_checks.sql",
+    "bytes": 810,
+    "sha256": "a6aa8b8fdf06399a4c512e707b6543b65cb237685f9bf61525add696bc00d621"
+  },
+  {
+    "path": "supabase/09_payment_security.sql",
+    "bytes": 2974,
+    "sha256": "3270a78b86afbe9657a12eaff86e814bb177f1f2b04bd6ea5d49b2c8d60ff8dc"
+  },
+  {
+    "path": "supabase/10_privacy_governance.sql",
+    "bytes": 4011,
+    "sha256": "2c6bccc737e494f38ce73f5f113138633a510538c9d1a565a82d2193242f417c"
+  },
+  {
+    "path": "supabase/functions/payment-webhook/index.ts",
+    "bytes": 1768,
+    "sha256": "100f627119ef9e4d5d5ed89a12eac5c11b96b931157a7e3c06197baf604759d3"
+  }
+]

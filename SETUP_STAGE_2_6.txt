@@ -1,0 +1,52 @@
+ATROPOLIES — STAGE 2.6: APPLICATION ATTACK PROTECTION
+====================================================
+
+WHAT THIS STAGE ADDS
+- Shared input validation helpers for names, email addresses and passwords.
+- Normalized email handling and basic control-character cleanup.
+- Safe text rendering through textContent (never insert untrusted values with innerHTML).
+- Duplicate-submit cooldowns to reduce accidental repeated requests.
+- Generic login error messages so the page does not expose raw authentication-provider errors.
+- A security checklist explaining SQL injection, CSRF, API abuse and server-side controls.
+
+INSTALLATION
+1. Download and extract this ZIP on your Android phone.
+2. Upload the CONTENTS of the extracted atropolies_stage22 folder into the ROOT of your GitHub repository.
+3. If GitHub asks whether to replace files, replace the matching files with these Stage 2.6 versions. Keep the js and supabase folders.
+4. Commit the changes. If Netlify is already connected to this GitHub repository, it should publish the commit automatically.
+5. Open the deployed site and test registration, login, password recovery and MFA screens.
+
+IMPORTANT: This package is prepared code, not proof of a live security deployment. The browser-side checks can be bypassed. Do not store real customer data until the Supabase project, RLS policies, Auth settings, hosting headers and tests are complete.
+
+SUPABASE / SERVER CONTROLS TO CONFIGURE
+- In Supabase Auth settings, set the exact production Site URL and only the required redirect URLs. Do not use broad wildcard redirects in production.
+- Keep email confirmation enabled for public registration.
+- Configure the Auth rate limits and email/SMS provider limits appropriate to the project. Test the limits; do not rely on the browser cooldown.
+- Enable CAPTCHA/bot protection for public sign-up and recovery flows if available in the project's Auth settings.
+- Keep RLS enabled on every exposed table and storage bucket. Test policies with at least two ordinary accounts and an administrator account.
+- Keep the Supabase publishable/anon key in browser config only. NEVER expose secret/service_role keys, database passwords, payment secrets or privileged API keys.
+- Put privileged actions behind a trusted server/Edge Function. Validate the user's identity, role, input, ownership and request limits there. Never trust a role supplied by the browser.
+
+CSRF NOTE
+The current static site uses Supabase Auth's SDK-managed bearer-token flow; it does not create a custom cookie-based application session. This reduces the usual cross-site cookie CSRF exposure, but does not make XSS harmless. If you later add your own cookie sessions or payment callbacks, implement server-side CSRF protection (SameSite cookies plus origin checks and anti-CSRF tokens where appropriate). Do not invent a client-only CSRF token and treat it as protection.
+
+SQL INJECTION NOTE
+Use Supabase's typed query builder for normal browser data access, for example:
+  const { data, error } = await supabase.from('business_profiles')
+    .select('id,business_name,description')
+    .eq('owner_id', user.id);
+Never build SQL by concatenating user input. Never expose a general-purpose SQL execution RPC. Any future SQL function must use fixed SQL structure, typed parameters, least privilege and a safe search_path.
+
+TEST BEFORE REAL USERS
+- Submit HTML-like text as a display name; it must display as text, never execute.
+- Try invalid/oversized names, malformed emails and passwords outside the allowed range.
+- Click submit repeatedly; the page should prevent accidental rapid duplicates (server rate limits remain essential).
+- Use two test accounts and verify one cannot read or modify the other's rows or files.
+- Attempt requests directly through browser developer tools/API, not only through visible buttons; RLS must still deny unauthorized actions.
+- Check the browser console and Network panel for exposed secrets. Only the publishable/anon key may be public.
+- Test recovery links, email confirmation, MFA and redirects on the real Netlify domain.
+
+LIMITATIONS
+- This is a starter security layer, not a penetration test, compliance certification, WAF, bot-management service or enterprise-grade guarantee.
+- SQL injection protection primarily comes from parameterized Supabase/PostgREST queries and safe server-side SQL, not from stripping characters in JavaScript.
+- Rate limits, CAPTCHA, RLS, MFA assurance enforcement, payment verification and privileged API authorization must be configured and tested at the server/provider layer.

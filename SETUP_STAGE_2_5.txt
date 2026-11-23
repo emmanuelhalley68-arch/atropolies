@@ -1,0 +1,40 @@
+ATROPOLIES — STAGE 2.5 DATABASE SECURITY
+
+WHAT THIS STAGE ADDS
+- A private security_audit_log table that records metadata for profile and business-profile changes.
+- Audit log reads are restricted to administrator/super_administrator roles.
+- A private Supabase Storage bucket named atropolies-private.
+- Storage policies restrict each authenticated user to a folder named with their own user UUID.
+- File uploads are limited to 10 MB and JPEG, PNG, WebP or PDF MIME types.
+
+IMPORTANT STATUS
+This is a prepared implementation package. It is not installed in your Supabase project,
+not deployed to Netlify, and not independently penetration-tested. Do not use real customer
+files or sensitive personal data until configuration and tests are complete.
+
+INSTALL ORDER
+1. In Supabase, open SQL Editor.
+2. Confirm Stage 2.2 profiles SQL and Stage 2.4 role/access SQL have both run successfully.
+3. Run supabase/03_database_security.sql.
+4. Open Storage and confirm atropolies-private is PRIVATE, not public.
+5. Do not create public read links for private customer documents.
+
+TESTING CHECKLIST (use two separate test accounts)
+- Account A uploads a test file to: A_USER_UUID/test.png.
+- Account A can list/download its own file.
+- Account B cannot list/download/replace/delete Account A's file, even if it knows the path.
+- Account B can upload to its own UUID folder.
+- A normal customer cannot read security_audit_log.
+- An authorized administrator can read audit entries.
+- Updating a profile or business profile creates an audit entry containing action/table/record metadata only.
+- A customer cannot insert, update or delete audit entries directly.
+- Oversized or unsupported file types are rejected by Storage configuration.
+
+SECURITY NOTES
+- Never put service_role/secret keys, database passwords or payment secrets in HTML/JS.
+- Do not rely on hidden buttons or frontend role checks. PostgreSQL RLS and Storage policies enforce access.
+- The audit log is not a full immutable SIEM. Project owners and privileged database operators can still alter data.
+- Backups and point-in-time recovery must be configured separately in Supabase project settings; verify restore procedures.
+- Enable MFA for Supabase project owners, restrict dashboard membership, and use least privilege.
+- Review retention, lawful basis, user notices and data-subject processes for Kenya's Data Protection Act / ODPC requirements before collecting customer data.
+- For highly sensitive documents, consider malware scanning and a trusted backend upload workflow before allowing downloads.

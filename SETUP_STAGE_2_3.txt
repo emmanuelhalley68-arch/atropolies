@@ -1,0 +1,39 @@
+ATROPOLIES — STAGE 2.3: ADVANCED ACCOUNT SECURITY
+=================================================
+
+WHAT THIS STAGE ADDS
+- TOTP authenticator enrollment, verification and removal in security.html.
+- MFA challenge during password sign-in for accounts with a verified TOTP factor.
+- A session-wide sign-out control.
+- Dashboard link to account security settings.
+- Supabase Auth remains responsible for MFA secrets and factor verification; the site does not store TOTP secrets in its database.
+
+IMPORTANT STATUS
+This is an implementation package, not a live or independently security-certified deployment. It has not been connected to your Supabase project or tested against your live Auth configuration. Test with dedicated accounts before real customers use it.
+
+INSTALL
+1. Merge these files into the existing Stage 2.2 project, preserving the folder structure.
+2. Upload the complete project contents to the GitHub repository root. Do not upload the ZIP itself.
+3. Deploy a Netlify preview before using a production domain.
+4. In Supabase Dashboard, open Authentication settings and confirm TOTP MFA is enabled and verification is not disabled. Keep email confirmation enabled.
+5. Set the exact Site URL and Redirect URLs for the Netlify preview and later the custom domain. Do not use broad wildcard redirects.
+6. In Authentication > Rate Limits, review the built-in rate limits; do not loosen them without a measured reason.
+7. In Authentication > Bot and Abuse Protection, configure Cloudflare Turnstile or hCaptcha and enable CAPTCHA protection for sign-up, sign-in and password reset. The secret key belongs only in the Supabase dashboard, never in browser JavaScript. The current forms need CAPTCHA token wiring before the feature can be used; do not assume CAPTCHA is active merely because the dashboard option exists.
+8. In Authentication > Sessions, configure session lifetime/inactivity controls if your Supabase plan supports them. Choose limits based on the service's risk and user experience. This package's global sign-out button revokes refresh tokens for all sessions; existing access JWTs may remain valid until they expire.
+
+TEST PLAN
+- Use a dedicated test account and authenticator app.
+- Sign in, open security.html, enroll TOTP and verify a current code.
+- Sign out, sign in again and confirm the MFA code is required.
+- Test a wrong/expired code and confirm access is not granted.
+- Test cancelling an unverified enrollment.
+- Test removing a factor after proving possession of the current code.
+- Use a second browser/device, press Sign out everywhere, and confirm other sessions are revoked when they next refresh. Note that access tokens can remain valid until JWT expiry.
+- Check browser console/network responses for errors and verify no secrets appear in client files or logs.
+
+IMPORTANT LIMITATIONS / NEXT HARDENING
+- The dashboard and security page redirect is a user-interface guard only. Enforce authorization using RLS and server-side checks for every protected operation.
+- TOTP is optional unless the project/application policy and server-side authorization enforce AAL2 for sensitive operations. A frontend check alone is not enforcement.
+- MFA recovery/helpdesk process, privileged admin MFA enforcement, CAPTCHA frontend token integration, server-side audit events, alerting and anomaly detection are not fully implemented here.
+- Do not store authenticator secrets, passwords, access tokens or recovery secrets in profiles or custom tables.
+- Do not call the system enterprise-grade or production-ready until the full threat model, authorization tests, recovery procedures, backups, monitoring and independent security review are complete.

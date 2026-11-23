@@ -1,0 +1,51 @@
+ATROPOLIES — STAGE 2.4: ROLE-BASED ACCESS CONTROL
+==================================================
+
+WHAT THIS ADDS
+- Five defined account roles: customer, teacher, business_owner, administrator,
+  super_administrator.
+- New accounts automatically receive the customer role.
+- Customers can read their own role names only. Browser users cannot grant or
+  promote roles because there are no INSERT, UPDATE or DELETE grants/policies
+  on public.user_roles.
+- A safe has_role(text) SQL helper checks the currently authenticated user.
+- A starter business_profiles table demonstrates owner-only access and admin
+  review policies.
+- Dashboard displays the signed-in user's role. This display is informational;
+  database Row Level Security is the actual enforcement.
+
+INSTALL
+1. Use the same Supabase project configured for Stage 2.2.
+2. Open Supabase Dashboard > SQL Editor.
+3. Confirm Stage 2.2 file supabase/01_profiles.sql has already been run.
+4. Run supabase/02_roles_access_control.sql.
+5. Deploy the updated website files to Netlify/GitHub.
+6. Register a test account. It should receive the customer role automatically.
+7. Verify that the account can SELECT only its own user_roles row.
+8. Verify that the account cannot INSERT, UPDATE or DELETE user_roles.
+9. Create a separate test business-owner account. Verify it cannot create a
+   business profile until an authorized operator grants business_owner.
+10. Grant the business_owner role in SQL Editor only after verifying the user's
+    auth.users UUID and identity. Then test owner isolation with two accounts.
+
+MANUAL ROLE ASSIGNMENT (SQL EDITOR ONLY)
+First find the intended account's UUID in Supabase Authentication > Users.
+Then run, replacing the UUID:
+
+insert into public.user_roles (user_id, role)
+values ('REPLACE-WITH-VERIFIED-USER-UUID', 'business_owner');
+
+For a teacher, use 'teacher'. Elevated administrator roles should be granted
+only after a documented identity and authorization check. Never grant roles
+from browser JavaScript or expose the service_role/secret key.
+
+IMPORTANT LIMITS
+- This is a role and business-profile security foundation, not a complete
+  production admin console, teacher content system, or business verification
+  workflow. Those need separate tables, policies, review processes and tests.
+- The dashboard role label is not a security control. Every protected table,
+  view, RPC and Storage bucket must have its own least-privilege policy.
+- The SQL has not been run against your Supabase project. Test in a development
+  project first, inspect SQL results, and verify with multiple test accounts.
+- Keep the service_role/secret key, database password and payment credentials
+  out of all frontend files and GitHub.
