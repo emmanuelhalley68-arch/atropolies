@@ -1,0 +1,20 @@
+ATROPOLIES RESTORE TEST RECORD
+
+Test date:
+Person conducting test:
+Environment (must be non-production):
+Backup date / recovery point:
+Website commit or deploy restored:
+Database restore completed? Yes / No
+Storage files checked? Yes / No
+RLS policies checked? Yes / No
+Role permissions checked? Yes / No
+Login and password reset tested? Yes / No
+Business profile access tested? Yes / No
+Unexpected missing data:
+Issues found:
+Corrective actions:
+Final result: PASS / FAIL
+
+Do not mark PASS until the restored system has been tested using separate
+customer and administrator accounts.

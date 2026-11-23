@@ -1,0 +1,27 @@
+ATROPOLIES SECURITY TEST RESULTS
+
+Project/environment:
+Tester:
+Date:
+Build/commit/deploy reference:
+
+For each test record:
+Test section and item:
+Result: PASS / FAIL / NOT TESTED / NOT APPLICABLE
+Evidence/reference (do not include secrets or personal data):
+Issue severity: CRITICAL / HIGH / MEDIUM / LOW
+Fix owner:
+Fix date:
+Retest result:
+
+SUMMARY
+Critical failures:
+High failures:
+Medium failures:
+Low failures:
+Untested items:
+Payment provider configured? YES / NO
+Restore test completed? YES / NO
+Independent review completed? YES / NO
+
+Do not mark a test PASS without evidence.

@@ -1,0 +1,49 @@
+ATROPOLIES — NETWORK / EDGE SECURITY DEPLOYMENT GUIDE
+
+This guide is operational. It does not activate Cloudflare or change DNS by itself.
+
+A. ACCOUNT SECURITY
+[ ] Create/confirm the domain registrar account is controlled by the company.
+[ ] Enable MFA on registrar, Cloudflare, GitHub, Netlify and Supabase accounts.
+[ ] Use unique passwords and offline recovery codes.
+[ ] Remove unknown users/API tokens.
+[ ] Keep at least two authorized company recovery contacts.
+
+B. CLOUDFLARE EDGE (IF USING A CUSTOM DOMAIN)
+[ ] Add the ATROPOLIES custom domain to Cloudflare.
+[ ] Review imported DNS records carefully before changing nameservers.
+[ ] Proxy only the website hostname records that point to Netlify, after
+    confirming Netlify custom-domain and TLS setup.
+[ ] Keep Supabase project hostnames and unrelated third-party endpoints out
+    of the website proxy unless their provider explicitly supports it.
+[ ] Set SSL/TLS mode to Full (strict) only after the Netlify origin has a valid
+    certificate for the custom domain.
+[ ] Enable provider-managed DDoS protection.
+[ ] Enable managed WAF rules available on the selected plan.
+[ ] Start with managed rules in a monitored/logging mode if available, then
+    block confirmed malicious traffic while checking for false positives.
+[ ] Add rate limits for login, password-reset and sensitive API paths where
+    supported; do not set limits so low that ordinary customers are blocked.
+[ ] Review bot controls and challenge settings for false positives.
+[ ] Confirm DNSSEC support and enable it at the registrar when correctly configured.
+
+C. NETLIFY
+[ ] Confirm custom domain is verified and HTTPS certificate is active.
+[ ] Force HTTPS / redirect HTTP to HTTPS.
+[ ] Review deployed _headers on every relevant route.
+[ ] Restrict team members and deploy permissions.
+[ ] Protect environment variables and rotate exposed credentials.
+[ ] Keep deploy history and a known-good rollback.
+
+D. VERIFICATION
+[ ] Visit the production domain and confirm valid HTTPS.
+[ ] Check response headers with a trusted header inspection tool.
+[ ] Confirm WAF events are visible in the provider dashboard.
+[ ] Test login and password reset to ensure WAF rules do not block normal flows.
+[ ] Confirm the website still loads fonts, images, embeds and Supabase Auth.
+[ ] Record date, DNS changes, rules enabled, test evidence and rollback plan.
+
+WARNING
+Do not blindly change nameservers, proxy records, or TLS modes. Incorrect DNS or
+proxy settings can take the website offline. Never place the Supabase service_role
+key in Cloudflare browser scripts, Netlify public files, or HTML/JavaScript.

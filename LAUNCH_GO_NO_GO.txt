@@ -1,0 +1,31 @@
+ATROPOLIES LAUNCH DECISION
+
+Do not launch to real customers until the responsible owner reviews and signs
+this decision.
+
+GO criteria:
+[ ] No known critical or high-severity security failures.
+[ ] Authentication and account recovery tested.
+[ ] RLS and role permissions tested with separate accounts.
+[ ] Private storage access tested.
+[ ] No secrets exposed in browser code or public repository.
+[ ] HTTPS and security headers verified on the live deployment.
+[ ] Backups enabled as required and restore test completed.
+[ ] Monitoring and incident-response process assigned.
+[ ] Privacy notice, terms, support contact, and data-handling practices reviewed.
+[ ] Payment functions disabled until provider integration has passed sandbox
+    tests and provider-specific verification review.
+[ ] Qualified independent security review completed or risks explicitly
+    accepted by the accountable project owner.
+
+Decision:
+[ ] GO for limited launch
+[ ] NO-GO — further work required
+
+Approved by:
+Date:
+Known accepted risks:
+Required follow-up actions:
+
+A GO decision from this checklist is not a security certification, legal
+compliance determination, or guarantee against attacks.

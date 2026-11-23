@@ -1,0 +1,21 @@
+ATROPOLIES RECOVERY TARGETS — INITIAL DRAFT
+
+These are planning targets, not provider guarantees. Confirm realistic targets
+against the hosting plan, backup frequency, staffing and budget.
+
+Recovery Point Objective (RPO):
+How much recent data could the business tolerate losing?
+Initial planning target: decide before launch; do not assume zero data loss.
+
+Recovery Time Objective (RTO):
+How long can the service be unavailable?
+Initial planning target: define a realistic target after a restore drill.
+
+For each critical service, document:
+- Maximum acceptable downtime
+- Maximum acceptable data loss
+- Responsible recovery owner
+- Required credentials and dependencies
+- Steps and verification checks
+
+Do not advertise an RTO or RPO until it has been demonstrated in restore tests.

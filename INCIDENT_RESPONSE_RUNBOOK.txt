@@ -1,0 +1,47 @@
+ATROPOLIES INCIDENT RESPONSE RUNBOOK
+
+Use this when you suspect an account takeover, leaked key, malicious upload,
+unexpected database change, or website compromise.
+
+1. CONTAIN
+- If a user account is compromised, use Supabase Auth controls to disable or
+  remove the affected session/account as appropriate.
+- If a secret key is exposed, rotate/revoke it in the provider dashboard.
+- Never paste secret keys into GitHub issues, public chats, or browser code.
+- If the website is actively serving malicious content, take it offline or
+  deploy a known-good version while investigating.
+
+2. PRESERVE EVIDENCE
+- Record the time (with timezone), affected account, affected pages, and
+  observed symptoms.
+- Export or preserve relevant Supabase Auth, API, and Postgres logs where
+  your plan supports it.
+- Preserve the GitHub commit history and Netlify deploy details.
+- Do not delete suspicious records before preserving evidence.
+
+3. INVESTIGATE
+- Check recent sign-ins, password resets, MFA changes, and unusual sessions.
+- Review security_audit_log for unexpected profile/business-profile changes.
+- Review GitHub commits and Netlify deploy history for unfamiliar changes.
+- Check storage objects and access policies for unexpected uploads/downloads.
+- Identify whether the issue came from a stolen credential, vulnerable code,
+  misconfigured RLS, exposed secret, or compromised administrator.
+
+4. RECOVER
+- Rotate affected credentials and API secrets.
+- Restore a known-good deployment if website files were changed.
+- Repair the vulnerability and review RLS policies before reopening access.
+- Restore database data only from a verified backup and test the restore.
+- Require affected users to reset passwords where appropriate.
+
+5. VERIFY AND LEARN
+- Test login, MFA, role access, database RLS, and storage permissions.
+- Confirm the attacker no longer has access.
+- Document root cause, timeline, impact, and corrective actions.
+- Add a regression test or checklist item to prevent recurrence.
+
+ESCALATION
+For suspected payment fraud, personal-data exposure, or a serious breach,
+preserve evidence and seek qualified security/legal assistance. Follow the
+applicable Kenyan data-protection and breach-notification requirements.
+Do not make public claims about the incident until facts are verified.

@@ -1,0 +1,20 @@
+ATROPOLIES PAYMENT SECURITY TEST CASES
+
+Run these in provider sandbox/test mode only.
+
+[ ] Valid payment: correct order, amount and currency -> succeeds once.
+[ ] Invalid callback authentication/signature -> rejected.
+[ ] Fake browser redirect claiming success -> does not mark paid.
+[ ] Wrong amount -> rejected and flagged for review.
+[ ] Wrong currency -> rejected.
+[ ] Unknown order reference -> rejected.
+[ ] Duplicate callback -> no duplicate credit/fulfilment.
+[ ] Old callback after refund/cancellation -> does not incorrectly restore paid state.
+[ ] Customer A cannot read Customer B's payment record.
+[ ] Browser cannot INSERT, UPDATE or DELETE payment records.
+[ ] Provider timeout -> remains pending/processing until verified.
+[ ] Refund -> only after provider-confirmed refund status.
+[ ] Secrets are absent from GitHub, HTML, JavaScript and browser network responses.
+
+Record the date, environment, tester, result, and evidence for each test.
+Do not accept real customer payments until critical tests pass.

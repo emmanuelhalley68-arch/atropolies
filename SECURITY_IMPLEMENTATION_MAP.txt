@@ -1,0 +1,50 @@
+STAGE 2.2–2.10 INTEGRATION MAP
+
+2.2 Authentication
+  Pages: login.html, register.html, forgot-password.html, reset-password.html,
+         dashboard.html
+  JS: js/config.js, auth-common.js, login.js, register.js, dashboard.js,
+      forgot-password.js, reset-password.js
+  SQL: supabase/01_profiles.sql
+
+2.3 Advanced account security
+  Page: security.html
+  JS: js/security.js
+  Includes Supabase Auth TOTP enrollment/verification and global sign-out UI.
+  Sensitive actions still require server/database-side MFA assurance policies.
+
+2.4 Role access control
+  SQL: supabase/02_roles_access_control.sql
+  Includes role tables/function and business profile policies from the stage
+  package. Role assignment must remain restricted to a trusted admin process.
+
+2.5 Database security
+  SQL: supabase/03_database_security.sql
+  Includes audit log/storage bucket security starter policies.
+
+2.6 Application attack protection
+  JS: js/input-security.js and updated authentication scripts/pages.
+  Checklist: SECURITY_CHECKLIST_STAGE_2_6.md
+  Homepage CSS/JS externalized to support script-src without unsafe-inline.
+
+2.7 Monitoring and incident response
+  SQL: supabase/07_security_monitoring.sql
+  Docs: docs/INCIDENT_RESPONSE_RUNBOOK.txt,
+        docs/WEEKLY_SECURITY_CHECKLIST.txt
+
+2.8 Backup and disaster recovery
+  SQL: supabase/08_backup_safety_checks.sql (diagnostics only)
+  Docs: docs/BACKUP_INVENTORY.txt, docs/RECOVERY_TARGETS.txt,
+        docs/RESTORE_TEST_RECORD.txt
+  Actual backups/PITR must be configured in the Supabase dashboard.
+
+2.9 Payment security
+  SQL: supabase/09_payment_security.sql
+  Function template: supabase/functions/payment-webhook/index.ts
+  Docs: docs/PAYMENT_FLOW.txt, docs/PROVIDER_SETUP_CHECKLIST.txt,
+        docs/TEST_CASES.txt
+  No provider selected or live integration configured.
+
+2.10 Final security review
+  Docs: docs/SECURITY_TEST_CHECKLIST.txt, docs/TEST_RESULTS_RECORD.txt,
+        docs/LAUNCH_GO_NO_GO.txt, docs/SECURITY_MAINTENANCE_SCHEDULE.txt

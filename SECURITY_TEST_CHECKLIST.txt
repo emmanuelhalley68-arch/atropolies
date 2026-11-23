@@ -1,0 +1,70 @@
+ATROPOLIES SECURITY TEST CHECKLIST
+
+Record PASS, FAIL, NOT TESTED, or NOT APPLICABLE for every item.
+
+A. DEPLOYMENT AND CONFIGURATION
+[ ] HTTPS works and HTTP redirects to HTTPS.
+[ ] Security headers are present on deployed pages.
+[ ] Content Security Policy does not permit unnecessary sources.
+[ ] No secrets appear in HTML, JavaScript, source maps, GitHub, or browser responses.
+[ ] Production and test environments use separate credentials.
+[ ] Admin/project-owner MFA is enabled.
+[ ] GitHub and Netlify access is limited to authorized people.
+
+B. AUTHENTICATION
+[ ] Registration works with valid data.
+[ ] Invalid email/password inputs are handled safely.
+[ ] Email confirmation behaves as configured.
+[ ] Login errors do not disclose whether an account exists.
+[ ] Password reset works and reset links expire as expected.
+[ ] Logout ends the session.
+[ ] Global sign-out/session revocation works where configured.
+[ ] MFA is enforced for sensitive actions on the server/database, not just shown in UI.
+[ ] Repeated login attempts are controlled by provider-side protections.
+
+C. AUTHORIZATION AND ROLES
+[ ] Customer A cannot access Customer B's profile.
+[ ] Customer A cannot read Customer B's business records.
+[ ] A customer cannot grant themselves administrator privileges.
+[ ] An administrator cannot perform super-administrator-only actions.
+[ ] Role changes require a trusted administrative path.
+[ ] Sensitive operations are checked server-side.
+
+D. DATABASE AND STORAGE
+[ ] RLS is enabled on every table containing user/business/private data.
+[ ] RLS policies are tested using separate accounts.
+[ ] Anonymous users cannot read private records.
+[ ] Browser users cannot write to audit/payment tables unless explicitly designed.
+[ ] Private storage bucket is not publicly readable.
+[ ] User A cannot read, overwrite, or delete User B's files.
+[ ] Upload type and size limits are enforced.
+[ ] File access uses authorized, short-lived access where appropriate.
+
+E. APPLICATION ATTACKS
+[ ] User-supplied text is rendered as text, not interpreted as HTML.
+[ ] Inputs are validated on the server/trusted function as well as in the browser.
+[ ] Database access uses parameterized queries/RPC patterns.
+[ ] No secrets are exposed in browser code.
+[ ] CSRF protections are appropriate for the authentication/session design.
+[ ] API endpoints enforce authorization and rate limits server-side.
+[ ] Error messages do not expose stack traces, secrets, or database internals.
+
+F. MONITORING AND RECOVERY
+[ ] Security audit log access is restricted.
+[ ] Provider Auth/API/Database logs can be reviewed.
+[ ] An incident-response owner and contact process are documented.
+[ ] A recent backup is confirmed in the provider dashboard.
+[ ] A restore test has succeeded in a separate test environment.
+[ ] GitHub known-good commit and Netlify known-good deploy are identifiable.
+
+G. PAYMENTS — DO NOT SKIP BEFORE LIVE PAYMENTS
+[ ] Provider selected and merchant account approved.
+[ ] Provider sandbox integration completed.
+[ ] Callback authentication/signature verified exactly as provider documents.
+[ ] Server-to-server transaction status verified where required.
+[ ] Order reference, amount, currency and customer are matched.
+[ ] Duplicate callbacks cannot credit/fulfil twice.
+[ ] Browser redirect alone cannot mark an order paid.
+[ ] Failure, timeout, cancellation and refund flows tested.
+[ ] No card details, CVV, mobile-money PIN or bank password stored by ATROPOLIES.
+[ ] Production credentials stored only as server-side secrets.

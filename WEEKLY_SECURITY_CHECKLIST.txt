@@ -1,0 +1,32 @@
+ATROPOLIES WEEKLY SECURITY CHECKLIST
+
+SUPABASE
+[ ] Review Auth sign-in and password-reset activity.
+[ ] Review API/Postgres logs for unusual errors or access patterns.
+[ ] Review security_audit_log for unexpected changes.
+[ ] Confirm RLS remains enabled on tables containing user/business data.
+[ ] Confirm private storage buckets remain private.
+[ ] Review administrator and super-administrator accounts.
+[ ] Confirm MFA is enabled for project owners and administrators.
+[ ] Confirm backups are available; periodically test restoring one.
+
+GITHUB
+[ ] Review recent commits and repository collaborators.
+[ ] Confirm no service_role key, database password, or payment secret is committed.
+[ ] Review dependency/security alerts if available.
+[ ] Keep production branch protected where the plan supports it.
+
+NETLIFY
+[ ] Review deploy history and published changes.
+[ ] Review environment variables and access permissions.
+[ ] Confirm HTTPS and security headers are active.
+[ ] Roll back unfamiliar or suspicious deployments.
+
+GENERAL
+[ ] Remove access for people who no longer need it.
+[ ] Update dependencies carefully and test before production.
+[ ] Record incidents and corrective actions.
+[ ] Test account roles using separate customer and administrator accounts.
+
+A checklist is not a substitute for automated alerting, independent security
+testing, backups, and a documented operational owner.

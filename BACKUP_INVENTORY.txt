@@ -1,0 +1,18 @@
+ATROPOLIES BACKUP INVENTORY
+
+Record where each item is backed up, who can access it, and when it was last
+verified. Do not write passwords, API keys, or recovery codes in this file.
+
+ITEM                         BACKUP LOCATION / METHOD       LAST VERIFIED
+Website source               GitHub repository               __________
+Published website            Netlify deploy history           __________
+Supabase database            Supabase backup/PITR              __________
+Supabase storage files       Separate export / provider plan  __________
+Supabase configuration       Secure configuration record      __________
+Domain and DNS settings      Registrar / DNS documentation    __________
+Payment provider records     Payment provider dashboard        __________
+Admin recovery credentials   Offline secure vault              __________
+
+Keep at least one protected copy outside the primary service where practical.
+Restrict access to backups and encrypt downloaded files containing personal
+or business data.

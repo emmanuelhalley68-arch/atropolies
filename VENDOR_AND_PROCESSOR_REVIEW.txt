@@ -1,0 +1,26 @@
+ATROPOLIES VENDOR / DATA PROCESSOR REGISTER
+
+Complete for every provider that may handle personal data.
+
+Provider:
+Service:
+Controller/processor role:
+Data categories:
+Processing purpose:
+Data subjects:
+Hosting/access countries:
+Subprocessors:
+Security certifications/assurances:
+Encryption/access controls:
+Incident notification contract:
+Retention/deletion/return:
+International transfer mechanism/safeguards:
+Data processing agreement signed? YES / NO
+Privacy notice updated? YES / NO
+Review date:
+Owner:
+
+Review Netlify, Supabase, Cloudflare (if used), email delivery, analytics,
+payment provider, customer support and any future AI/media vendors.
+The Data Protection Act requires appropriate technical/organizational measures
+and written processor arrangements where applicable; obtain legal review.

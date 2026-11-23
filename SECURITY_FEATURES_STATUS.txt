@@ -1,0 +1,38 @@
+ATROPOLIES — HONEST IMPLEMENTATION STATUS
+
+PREPARED IN THE INTEGRATED CODE PACKAGE
+- Authentication page/code foundation.
+- Profile and role SQL foundations.
+- RLS and private storage policy foundations.
+- Browser-side input safety helpers.
+- Security headers for Netlify.
+- Audit-log and payment schema foundations.
+- Incident, backup, payment and launch test documentation.
+- Privacy/governance policy drafts and privacy request schema.
+
+REQUIRES CONFIGURATION IN REAL PROVIDER ACCOUNTS
+- Supabase project URL/publishable key and Auth redirect URLs.
+- Apply SQL in correct order and validate policies with separate accounts.
+- MFA and owner/admin access controls.
+- Backup/PITR and restore drill.
+- Auth/API/database log review and alerts.
+- Netlify domain, HTTPS, environment and deploy permissions.
+- Cloudflare DNS proxy, WAF, DDoS and rate limits if chosen.
+- Email delivery and account recovery configuration.
+- Payment provider selection, merchant onboarding, server-side initiation,
+  provider-specific callback verification, refunds and sandbox tests.
+
+REQUIRES IMPLEMENTATION / REVIEW
+- Server-side authorization and AAL2 enforcement for sensitive operations.
+- Provider-specific payment Edge Function (current template intentionally 503).
+- Functional privacy request workflow and any consent interface.
+- Actual cookie/SDK inventory and consent controls where required.
+- Data inventory, retention schedule, processor agreements and transfer review.
+- ODPC registration applicability, DPO/DPIA assessment and legal review.
+- Independent penetration test and remediation.
+
+NO CERTIFICATION
+No security control is considered live merely because its file exists. No
+penetration test, legal audit, or compliance certification has been performed.
+Do not launch sensitive customer services or accept live payments until all
+applicable items have been configured, tested and approved.

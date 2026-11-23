@@ -1,0 +1,28 @@
+PAYMENT PROVIDER SETUP CHECKLIST
+
+Before choosing a provider:
+[ ] Confirm it supports your business type and country.
+[ ] Confirm merchant onboarding and business verification requirements.
+[ ] Review fees, settlement timing, refunds, chargebacks/disputes and support.
+[ ] Read official API documentation for callbacks and status verification.
+[ ] Confirm sandbox/test environment availability.
+[ ] Confirm how idempotency and duplicate callbacks are handled.
+
+Before sandbox integration:
+[ ] Create merchant credentials in the provider dashboard.
+[ ] Store secrets only in secure server-side environment variables.
+[ ] Configure the server-side payment initiation function.
+[ ] Configure the provider callback URL to the Edge Function endpoint.
+[ ] Implement the provider's exact callback verification mechanism.
+[ ] Implement server-to-server transaction verification where required.
+[ ] Validate amount, currency, order reference and provider reference.
+[ ] Ensure duplicate callbacks do not create duplicate credits or fulfilment.
+[ ] Log only necessary transaction metadata; do not log PINs or card details.
+
+Before production:
+[ ] Complete sandbox test cases.
+[ ] Review RLS and server-side authorization.
+[ ] Restrict provider dashboard access and enable MFA.
+[ ] Rotate sandbox credentials out; use production credentials securely.
+[ ] Verify refund, cancellation, timeout and failure handling.
+[ ] Obtain qualified review of the integration.

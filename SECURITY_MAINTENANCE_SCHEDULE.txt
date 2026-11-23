@@ -1,0 +1,26 @@
+ATROPOLIES SECURITY MAINTENANCE SCHEDULE
+
+WEEKLY
+- Review administrator accounts and recent sign-in activity.
+- Review unusual Auth/API/database activity.
+- Review recent GitHub commits and Netlify deployments.
+- Check for unexpected user/role/storage changes.
+
+MONTHLY
+- Review dependencies and security advisories.
+- Review RLS policies and administrator access.
+- Confirm backup status and available retention.
+- Review environment secrets and rotate when exposure or policy requires it.
+- Review open security issues and close resolved ones.
+
+QUARTERLY
+- Perform a restore drill in a separate environment.
+- Review incident-response contacts and procedures.
+- Re-test customer-to-customer access boundaries.
+- Review payment provider integration and refund/failure flows if enabled.
+- Arrange independent security testing appropriate to platform growth.
+
+AFTER EVERY MAJOR CHANGE
+- Re-test authentication, authorization, RLS, storage, and payment-related flows.
+- Review the deployment diff and rollback option.
+- Confirm no secrets or customer data entered the repository.

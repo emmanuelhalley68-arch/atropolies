@@ -1,0 +1,23 @@
+ATROPOLIES PAYMENT FLOW
+
+1. Customer selects a product/service and confirms the order.
+2. Browser sends the order reference to a trusted server-side function.
+3. Server loads the authoritative order amount and currency from the database.
+   Never accept the amount as authoritative from browser input.
+4. Server creates a pending payment record with a unique idempotency key.
+5. Server calls the payment provider using server-side credentials.
+6. Customer completes payment on the provider's hosted/approved payment flow.
+7. Provider sends a callback to the server-side webhook.
+8. Webhook authenticates/verifies the callback using the provider's exact method.
+9. Server verifies transaction status and matches reference, amount and currency.
+10. Server deduplicates the event and updates payment state exactly once.
+11. Browser asks the server for payment status; it does not declare itself paid.
+12. Only a verified successful transaction unlocks the paid service.
+
+STATUS RULES
+- pending -> processing -> succeeded
+- pending/processing -> failed or cancelled
+- succeeded -> refunded only after a verified refund process
+- Never allow the browser to set status.
+- Never downgrade or overwrite a succeeded payment based on an old callback.
+- Store amounts in the smallest currency unit (for example, cents) as integers.

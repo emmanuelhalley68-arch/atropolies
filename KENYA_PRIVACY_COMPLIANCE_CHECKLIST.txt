@@ -1,0 +1,29 @@
+KENYA PRIVACY / DATA PROTECTION READINESS CHECKLIST
+
+This is a readiness checklist, not legal advice or a compliance certificate.
+
+[ ] Identify the legal operator and whether it is controller, processor, or both.
+[ ] Map every personal-data collection, purpose, system, recipient and country.
+[ ] Determine ODPC registration requirements for each role/activity.
+[ ] Assess whether a Data Protection Officer must be designated.
+[ ] Establish lawful basis and transparent notices for each purpose.
+[ ] Minimize data and define retention/deletion periods.
+[ ] Provide a route for data-subject rights requests.
+[ ] Assess children/minors and sensitive data before offering such features.
+[ ] Assess whether a DPIA is required or prudent for high-risk processing.
+[ ] Document cross-border transfers and safeguards.
+[ ] Sign appropriate processor agreements with service providers.
+[ ] Maintain technical/organizational security measures and evidence.
+[ ] Maintain breach detection, assessment, notification and communication steps.
+[ ] Train staff and restrict access.
+[ ] Review privacy notices, terms, cookie notice and internal policies.
+[ ] Obtain qualified Kenyan legal/privacy review before launch.
+
+ODPC official resources:
+https://www.odpc.go.ke/
+https://www.odpc.go.ke/data-protection-laws-kenya/
+https://www.odpc.go.ke/rights-of-a-data-subject/
+
+The ODPC and Data Protection Act requirements depend on the actual operator,
+processing activities, exemptions, thresholds and circumstances. Do not assume
+registration is optional; determine applicability with current ODPC guidance.
